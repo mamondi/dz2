@@ -1,7 +1,11 @@
-const getCurrentDate = require('./getDate');
-const getCurrentTime = require('./getTime');
+import getCurrentDate from './getDate';
+import getCurrentTime from './getTime';
 
-const currentDate = getCurrentDate();
-const currentTime = getCurrentTime();
-
-console.log(`Поточна дата та час: ${currentDate} ${currentTime}`);
+document.addEventListener('DOMContentLoaded', () => {
+    const currentDate = getCurrentDate();
+    const currentTime = getCurrentTime();
+    
+    const div = document.createElement('div');
+    div.textContent = `Поточна дата та час: ${currentDate} ${currentTime}`;
+    document.body.appendChild(div);
+});
